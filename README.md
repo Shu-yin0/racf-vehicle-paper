@@ -54,6 +54,31 @@ The checked-in `paper/RACF_ICASSP2027_preprint.pdf` is the current private refer
 
 No credentials, private HPC paths, scheduler logs, raw worker databases, or internal project journals belong in this repository. Large policy/data assets are referenced by manifest and remain outside Git until a release decision is made. Before making the repository public, audit every result, path, author field, and data/model license.
 
+
+## Reproduce before reading the full evidence package
+
+The public entry point is [`REPRODUCE.md`](REPRODUCE.md). Run:
+
+```bash
+python scripts/reproduce.py
+```
+
+This creates a deterministic synthetic smoke result and records the environment. It is deliberately labelled `mock test`; it validates the code path without exposing private raw data or claiming a full benchmark.
+
+## Key paper figures
+
+![RACF evidence summary](paper/figures/fig2_evidence.png)
+
+![Policy-family comparison](paper/figures/fig2_policy_families.png)
+
+![Safety-utility trade-off](paper/figures/fig3_tradeoffs.png)
+
+The figure/table crosswalk and paper-result boundary are documented in [`REPRODUCE.md`](REPRODUCE.md).
+
+## Packaging reference
+
+The organization follows the public replication-package pattern described in [`yhoriuchi/replication-package-guide`](https://github.com/yhoriuchi/replication-package-guide): one public run entry point, explicit data restrictions, a paper figure/table crosswalk, and a recorded environment. The implementation here is adapted to Python, LaTeX, and the RACF experiment protocol.
+
 ## Citation
 
 If you use this code, cite the accompanying paper using the metadata in [`CITATION.cff`](CITATION.cff). The title, method name, and reported numbers should remain synchronized with `paper/main.tex`.
@@ -64,3 +89,7 @@ If you use this code, cite the accompanying paper using the metadata in [`CITATI
 - Paper: ICASSP 2027 submission/preprint work in progress
 - Scope: paper-aligned RACF implementation and evidence package
 - Full benchmark status: not claimed by this repository
+
+
+
+

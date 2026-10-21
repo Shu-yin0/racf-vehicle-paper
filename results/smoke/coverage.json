@@ -1,0 +1,25 @@
+{
+  "seed": 2026,
+  "calibration_episodes": 32,
+  "test_episodes": 16,
+  "horizon": 20,
+  "one_step": {
+    "coverage": 0.91875,
+    "mean_score": 0.0494072756187528,
+    "std_score": 0.02557759027202098,
+    "n_test": 320,
+    "quantile": 0.08658116148331475,
+    "alpha": 0.1
+  },
+  "pathwise": {
+    "coverage": 0.9375,
+    "n_episodes": 16,
+    "horizon": 20,
+    "mean_max_score": 0.10655720846613226,
+    "p95_max_score": 0.1318971211961154,
+    "q_pathwise": 0.12666093988078247,
+    "alpha": 0.1,
+    "scope": "finite-horizon pathwise residual-envelope coverage"
+  },
+  "scope": "mock test: synthetic transitions only; no simulator or paper benchmark"
+}

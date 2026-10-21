@@ -1,0 +1,70 @@
+\section{Coverage and Control Implications}
+\subsection{Coverage under score-distribution shift}
+Let $P$ be the calibration score law and $Q$ the test score law. The model
+and score function are fixed before collecting calibration data. We use
+$\TV(P,Q)=\sup_A|P(A)-Q(A)|$.
+
+\begin{theorem}[Shifted one-step coverage]
+Let $S_1,\ldots,S_n$ be iid from $P$ and let $S_*$ be an independent
+test score from $Q$. If $\TV(P,Q)\leq\epsilon$, then the threshold
+in~\eqref{eq:quantile} satisfies
+\begin{equation}
+ \Pr\{S_*\leq q_\alpha\}\geq 1-\alpha-\epsilon.
+ \label{eq:tv}
+\end{equation}
+The probability averages over both calibration data and the test score.
+\end{theorem}
+\begin{proof}
+Introduce an independent $S'\sim P$. Exchangeability gives
+$\Pr(S'\leq S_{(k)})\geq k/(n+1)$ for $k\leq n$, with ties
+making the inequality conservative. For every realized threshold $q$,
+$Q(({-\infty},q])\geq P(({-\infty},q])-\epsilon$.
+Taking expectation over calibration proves~\eqref{eq:tv}. If $k>n$,
+the infinite threshold covers every finite score.
+\end{proof}
+
+The shift parameter has an RL interpretation. Let $\mu_P,\mu_Q$ be
+state--action laws and $K_P,K_Q$ their conditional next-state kernels.
+Contraction of TV through the fixed score map and the triangle inequality
+give
+\begin{equation}
+ \begin{split}
+ \TV(P_S,Q_S)\leq{}&\TV(\mu_P,\mu_Q)\\
+ &+\sup_{s,a}\TV(K_P(\cdot\mid s,a),K_Q(\cdot\mid s,a)).
+ \end{split}
+ \label{eq:decomposition}
+\end{equation}
+The first term captures occupancy changes induced by the policy; the second
+captures changes in physical dynamics. The bound motivates evaluating both
+policy families and physical conditions. In deterministic simulators its
+kernel term can be one, so residual measurements provide a more informative
+empirical diagnostic than treating~\eqref{eq:decomposition} as a numerical
+certificate. Robust predictive inference develops stronger distributional
+assumptions for such transfers \cite{cauchois2024robust,barber2023beyond}.
+
+\subsection{From residual envelopes to safety margins}
+If complete calibration episodes are iid, their maxima $M_H$ are iid even
+when transitions within an episode are dependent. Applying Theorem~1 to
+the maximum-score laws gives
+\begin{equation}
+ \Pr\{M_H(\tau_*)\leq q_H\}\geq1-\alpha-\epsilon_H,
+ \label{eq:trajectory}
+\end{equation}
+where $\epsilon_H$ bounds TV between calibration and test maximum-score
+laws. This construction accounts for temporal dependence at the sampling
+unit at which the envelope is calibrated.
+
+For a feasible action and any retained hypothesis $\theta$, Lipschitz
+continuity yields the deterministic implication
+\begin{equation}
+ h(s_{t+1})\geq h(f_\theta(s_t,a_t))
+       -L_h\|s_{t+1}-f_\theta(s_t,a_t)\|_2.
+ \label{eq:lipschitz}
+\end{equation}
+Thus a residual of at most $m_t/L_h$ implies nonnegative next-state margin.
+A probabilistic safety result requires coverage of the applied-action and
+retained-hypothesis residual law, together with feasibility. Independent-score
+coverage alone does not establish these closed-loop conditions.
+Our evaluated coefficient $\eta=1$ is an empirical operating point,
+distinct from the analytical $L_h=\sqrt{3.25}$; the experiments measure its
+realized safety and control cost.

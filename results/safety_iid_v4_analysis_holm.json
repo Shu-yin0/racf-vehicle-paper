@@ -1,0 +1,655 @@
+{
+  "intervention_endpoint": null,
+  "intervention_summary": [],
+  "intervention_tests": [],
+  "mechanism_ablation_endpoint": "robust_no_margin_vs_static_conformal violation_rate",
+  "mechanism_tests": [
+    {
+      "comparison": "robust_no_margin_vs_static_conformal",
+      "condition": "combined",
+      "id": "combined:brake:no_margin_vs_static",
+      "inference": {
+        "effective_pairs": 100,
+        "eligible": true,
+        "reasons": []
+      },
+      "pairs": 100,
+      "scenario": "brake",
+      "violation": {
+        "ci95_high": 0.0,
+        "ci95_low": 0.0,
+        "mean_difference": 0.0
+      },
+      "violation_rate_sign_flip_p": 1.0,
+      "violation_rate_sign_flip_p_holm": 1.0
+    },
+    {
+      "comparison": "robust_no_margin_vs_static_conformal",
+      "condition": "combined",
+      "id": "combined:cutin:no_margin_vs_static",
+      "inference": {
+        "effective_pairs": 100,
+        "eligible": true,
+        "reasons": []
+      },
+      "pairs": 100,
+      "scenario": "cutin",
+      "violation": {
+        "ci95_high": 0.0,
+        "ci95_low": 0.0,
+        "mean_difference": 0.0
+      },
+      "violation_rate_sign_flip_p": 1.0,
+      "violation_rate_sign_flip_p_holm": 1.0
+    },
+    {
+      "comparison": "robust_no_margin_vs_static_conformal",
+      "condition": "mass_shift",
+      "id": "mass_shift:brake:no_margin_vs_static",
+      "inference": {
+        "effective_pairs": 100,
+        "eligible": true,
+        "reasons": []
+      },
+      "pairs": 100,
+      "scenario": "brake",
+      "violation": {
+        "ci95_high": 0.013280000000000004,
+        "ci95_low": 0.0094,
+        "mean_difference": 0.011280000000000002
+      },
+      "violation_rate_sign_flip_p": 9.99990000099999e-06,
+      "violation_rate_sign_flip_p_holm": 7.999920000799993e-05
+    },
+    {
+      "comparison": "robust_no_margin_vs_static_conformal",
+      "condition": "mass_shift",
+      "id": "mass_shift:cutin:no_margin_vs_static",
+      "inference": {
+        "effective_pairs": 100,
+        "eligible": true,
+        "reasons": []
+      },
+      "pairs": 100,
+      "scenario": "cutin",
+      "violation": {
+        "ci95_high": 0.0,
+        "ci95_low": 0.0,
+        "mean_difference": 0.0
+      },
+      "violation_rate_sign_flip_p": 1.0,
+      "violation_rate_sign_flip_p_holm": 1.0
+    },
+    {
+      "comparison": "robust_no_margin_vs_static_conformal",
+      "condition": "nominal",
+      "id": "nominal:brake:no_margin_vs_static",
+      "inference": {
+        "effective_pairs": 100,
+        "eligible": true,
+        "reasons": []
+      },
+      "pairs": 100,
+      "scenario": "brake",
+      "violation": {
+        "ci95_high": 0.006840499999999993,
+        "ci95_low": 0.003660000000000001,
+        "mean_difference": 0.005180000000000001
+      },
+      "violation_rate_sign_flip_p": 9.99990000099999e-06,
+      "violation_rate_sign_flip_p_holm": 7.999920000799993e-05
+    },
+    {
+      "comparison": "robust_no_margin_vs_static_conformal",
+      "condition": "nominal",
+      "id": "nominal:cutin:no_margin_vs_static",
+      "inference": {
+        "effective_pairs": 100,
+        "eligible": true,
+        "reasons": []
+      },
+      "pairs": 100,
+      "scenario": "cutin",
+      "violation": {
+        "ci95_high": 0.0,
+        "ci95_low": 0.0,
+        "mean_difference": 0.0
+      },
+      "violation_rate_sign_flip_p": 1.0,
+      "violation_rate_sign_flip_p_holm": 1.0
+    },
+    {
+      "comparison": "robust_no_margin_vs_static_conformal",
+      "condition": "slope_shift",
+      "id": "slope_shift:brake:no_margin_vs_static",
+      "inference": {
+        "effective_pairs": 100,
+        "eligible": true,
+        "reasons": []
+      },
+      "pairs": 100,
+      "scenario": "brake",
+      "violation": {
+        "ci95_high": 0.0,
+        "ci95_low": 0.0,
+        "mean_difference": 0.0
+      },
+      "violation_rate_sign_flip_p": 1.0,
+      "violation_rate_sign_flip_p_holm": 1.0
+    },
+    {
+      "comparison": "robust_no_margin_vs_static_conformal",
+      "condition": "slope_shift",
+      "id": "slope_shift:cutin:no_margin_vs_static",
+      "inference": {
+        "effective_pairs": 100,
+        "eligible": true,
+        "reasons": []
+      },
+      "pairs": 100,
+      "scenario": "cutin",
+      "violation": {
+        "ci95_high": 0.0,
+        "ci95_low": 0.0,
+        "mean_difference": 0.0
+      },
+      "violation_rate_sign_flip_p": 1.0,
+      "violation_rate_sign_flip_p_holm": 1.0
+    }
+  ],
+  "primary_endpoint": "adaptive_conformal_vs_static_conformal violation_rate",
+  "primary_tests": [
+    {
+      "comparison": "adaptive_conformal_vs_static_conformal",
+      "condition": "combined",
+      "id": "combined:brake:adaptive_conformal_vs_static",
+      "inference": {
+        "effective_pairs": 100,
+        "eligible": true,
+        "reasons": []
+      },
+      "pairs": 100,
+      "scenario": "brake",
+      "violation": {
+        "ci95_high": 0.0,
+        "ci95_low": 0.0,
+        "mean_difference": 0.0
+      },
+      "violation_rate_sign_flip_p": 1.0,
+      "violation_rate_sign_flip_p_holm": 1.0
+    },
+    {
+      "comparison": "adaptive_conformal_vs_static_conformal",
+      "condition": "combined",
+      "id": "combined:cutin:adaptive_conformal_vs_static",
+      "inference": {
+        "effective_pairs": 100,
+        "eligible": true,
+        "reasons": []
+      },
+      "pairs": 100,
+      "scenario": "cutin",
+      "violation": {
+        "ci95_high": 0.0,
+        "ci95_low": 0.0,
+        "mean_difference": 0.0
+      },
+      "violation_rate_sign_flip_p": 1.0,
+      "violation_rate_sign_flip_p_holm": 1.0
+    },
+    {
+      "comparison": "adaptive_conformal_vs_static_conformal",
+      "condition": "mass_shift",
+      "id": "mass_shift:brake:adaptive_conformal_vs_static",
+      "inference": {
+        "effective_pairs": 100,
+        "eligible": true,
+        "reasons": []
+      },
+      "pairs": 100,
+      "scenario": "brake",
+      "violation": {
+        "ci95_high": 0.0,
+        "ci95_low": 0.0,
+        "mean_difference": 0.0
+      },
+      "violation_rate_sign_flip_p": 1.0,
+      "violation_rate_sign_flip_p_holm": 1.0
+    },
+    {
+      "comparison": "adaptive_conformal_vs_static_conformal",
+      "condition": "mass_shift",
+      "id": "mass_shift:cutin:adaptive_conformal_vs_static",
+      "inference": {
+        "effective_pairs": 100,
+        "eligible": true,
+        "reasons": []
+      },
+      "pairs": 100,
+      "scenario": "cutin",
+      "violation": {
+        "ci95_high": 0.0,
+        "ci95_low": 0.0,
+        "mean_difference": 0.0
+      },
+      "violation_rate_sign_flip_p": 1.0,
+      "violation_rate_sign_flip_p_holm": 1.0
+    },
+    {
+      "comparison": "adaptive_conformal_vs_static_conformal",
+      "condition": "nominal",
+      "id": "nominal:brake:adaptive_conformal_vs_static",
+      "inference": {
+        "effective_pairs": 100,
+        "eligible": true,
+        "reasons": []
+      },
+      "pairs": 100,
+      "scenario": "brake",
+      "violation": {
+        "ci95_high": 0.0,
+        "ci95_low": 0.0,
+        "mean_difference": 0.0
+      },
+      "violation_rate_sign_flip_p": 1.0,
+      "violation_rate_sign_flip_p_holm": 1.0
+    },
+    {
+      "comparison": "adaptive_conformal_vs_static_conformal",
+      "condition": "nominal",
+      "id": "nominal:cutin:adaptive_conformal_vs_static",
+      "inference": {
+        "effective_pairs": 100,
+        "eligible": true,
+        "reasons": []
+      },
+      "pairs": 100,
+      "scenario": "cutin",
+      "violation": {
+        "ci95_high": 0.0,
+        "ci95_low": 0.0,
+        "mean_difference": 0.0
+      },
+      "violation_rate_sign_flip_p": 1.0,
+      "violation_rate_sign_flip_p_holm": 1.0
+    },
+    {
+      "comparison": "adaptive_conformal_vs_static_conformal",
+      "condition": "slope_shift",
+      "id": "slope_shift:brake:adaptive_conformal_vs_static",
+      "inference": {
+        "effective_pairs": 100,
+        "eligible": true,
+        "reasons": []
+      },
+      "pairs": 100,
+      "scenario": "brake",
+      "violation": {
+        "ci95_high": 0.0,
+        "ci95_low": 0.0,
+        "mean_difference": 0.0
+      },
+      "violation_rate_sign_flip_p": 1.0,
+      "violation_rate_sign_flip_p_holm": 1.0
+    },
+    {
+      "comparison": "adaptive_conformal_vs_static_conformal",
+      "condition": "slope_shift",
+      "id": "slope_shift:cutin:adaptive_conformal_vs_static",
+      "inference": {
+        "effective_pairs": 100,
+        "eligible": true,
+        "reasons": []
+      },
+      "pairs": 100,
+      "scenario": "cutin",
+      "violation": {
+        "ci95_high": 0.0,
+        "ci95_low": 0.0,
+        "mean_difference": 0.0
+      },
+      "violation_rate_sign_flip_p": 1.0,
+      "violation_rate_sign_flip_p_holm": 1.0
+    }
+  ],
+  "status": "partial rollout",
+  "tests": [
+    {
+      "collision_mcnemar_p": 1.0,
+      "collision_mcnemar_p_holm": 1.0,
+      "condition": "combined",
+      "episode_safety_violation_mcnemar_p": 1.0,
+      "episode_safety_violation_mcnemar_p_holm": 1.0,
+      "id": "combined:brake:static_conformal",
+      "inference": {
+        "effective_pairs": 100,
+        "eligible": true,
+        "reasons": []
+      },
+      "method": "static_conformal",
+      "pairs": 100,
+      "scenario": "brake",
+      "violation": {
+        "ci95_high": 0.00018,
+        "ci95_low": 0.0,
+        "mean_difference": 6e-05
+      }
+    },
+    {
+      "collision_mcnemar_p": 1.0,
+      "collision_mcnemar_p_holm": 1.0,
+      "condition": "combined",
+      "episode_safety_violation_mcnemar_p": 1.0,
+      "episode_safety_violation_mcnemar_p_holm": 1.0,
+      "id": "combined:brake:adaptive_conformal",
+      "inference": {
+        "effective_pairs": 100,
+        "eligible": true,
+        "reasons": []
+      },
+      "method": "adaptive_conformal",
+      "pairs": 100,
+      "scenario": "brake",
+      "violation": {
+        "ci95_high": 0.00018,
+        "ci95_low": 0.0,
+        "mean_difference": 6e-05
+      }
+    },
+    {
+      "collision_mcnemar_p": 1.0,
+      "collision_mcnemar_p_holm": 1.0,
+      "condition": "combined",
+      "episode_safety_violation_mcnemar_p": 1.0,
+      "episode_safety_violation_mcnemar_p_holm": 1.0,
+      "id": "combined:cutin:static_conformal",
+      "inference": {
+        "effective_pairs": 100,
+        "eligible": true,
+        "reasons": []
+      },
+      "method": "static_conformal",
+      "pairs": 100,
+      "scenario": "cutin",
+      "violation": {
+        "ci95_high": 0.016680000000000004,
+        "ci95_low": 0.015920000000000004,
+        "mean_difference": 0.016300000000000002
+      }
+    },
+    {
+      "collision_mcnemar_p": 1.0,
+      "collision_mcnemar_p_holm": 1.0,
+      "condition": "combined",
+      "episode_safety_violation_mcnemar_p": 1.0,
+      "episode_safety_violation_mcnemar_p_holm": 1.0,
+      "id": "combined:cutin:adaptive_conformal",
+      "inference": {
+        "effective_pairs": 100,
+        "eligible": true,
+        "reasons": []
+      },
+      "method": "adaptive_conformal",
+      "pairs": 100,
+      "scenario": "cutin",
+      "violation": {
+        "ci95_high": 0.016680000000000004,
+        "ci95_low": 0.015920000000000004,
+        "mean_difference": 0.016300000000000002
+      }
+    },
+    {
+      "collision_mcnemar_p": 1.0,
+      "collision_mcnemar_p_holm": 1.0,
+      "condition": "mass_shift",
+      "episode_safety_violation_mcnemar_p": 4.1359030627651384e-25,
+      "episode_safety_violation_mcnemar_p_holm": 6.617444900424222e-24,
+      "id": "mass_shift:brake:static_conformal",
+      "inference": {
+        "effective_pairs": 100,
+        "eligible": true,
+        "reasons": []
+      },
+      "method": "static_conformal",
+      "pairs": 100,
+      "scenario": "brake",
+      "violation": {
+        "ci95_high": 0.08671999999999999,
+        "ci95_low": 0.06391949999999999,
+        "mean_difference": 0.07514
+      }
+    },
+    {
+      "collision_mcnemar_p": 1.0,
+      "collision_mcnemar_p_holm": 1.0,
+      "condition": "mass_shift",
+      "episode_safety_violation_mcnemar_p": 4.1359030627651384e-25,
+      "episode_safety_violation_mcnemar_p_holm": 6.617444900424222e-24,
+      "id": "mass_shift:brake:adaptive_conformal",
+      "inference": {
+        "effective_pairs": 100,
+        "eligible": true,
+        "reasons": []
+      },
+      "method": "adaptive_conformal",
+      "pairs": 100,
+      "scenario": "brake",
+      "violation": {
+        "ci95_high": 0.08671999999999999,
+        "ci95_low": 0.06391949999999999,
+        "mean_difference": 0.07514
+      }
+    },
+    {
+      "collision_mcnemar_p": 0.5,
+      "collision_mcnemar_p_holm": 1.0,
+      "condition": "mass_shift",
+      "episode_safety_violation_mcnemar_p": 1.0,
+      "episode_safety_violation_mcnemar_p_holm": 1.0,
+      "id": "mass_shift:cutin:static_conformal",
+      "inference": {
+        "effective_pairs": 100,
+        "eligible": true,
+        "reasons": []
+      },
+      "method": "static_conformal",
+      "pairs": 100,
+      "scenario": "cutin",
+      "violation": {
+        "ci95_high": 0.06737465217391306,
+        "ci95_low": 0.05790750000000001,
+        "mean_difference": 0.062201315496098114
+      }
+    },
+    {
+      "collision_mcnemar_p": 0.5,
+      "collision_mcnemar_p_holm": 1.0,
+      "condition": "mass_shift",
+      "episode_safety_violation_mcnemar_p": 1.0,
+      "episode_safety_violation_mcnemar_p_holm": 1.0,
+      "id": "mass_shift:cutin:adaptive_conformal",
+      "inference": {
+        "effective_pairs": 100,
+        "eligible": true,
+        "reasons": []
+      },
+      "method": "adaptive_conformal",
+      "pairs": 100,
+      "scenario": "cutin",
+      "violation": {
+        "ci95_high": 0.06737465217391306,
+        "ci95_low": 0.05790750000000001,
+        "mean_difference": 0.062201315496098114
+      }
+    },
+    {
+      "collision_mcnemar_p": 1.0,
+      "collision_mcnemar_p_holm": 1.0,
+      "condition": "nominal",
+      "episode_safety_violation_mcnemar_p": 1.1368683772161603e-13,
+      "episode_safety_violation_mcnemar_p_holm": 1.5916157281026244e-12,
+      "id": "nominal:brake:static_conformal",
+      "inference": {
+        "effective_pairs": 100,
+        "eligible": true,
+        "reasons": []
+      },
+      "method": "static_conformal",
+      "pairs": 100,
+      "scenario": "brake",
+      "violation": {
+        "ci95_high": 0.037960499999999994,
+        "ci95_low": 0.022760000000000002,
+        "mean_difference": 0.030260000000000002
+      }
+    },
+    {
+      "collision_mcnemar_p": 1.0,
+      "collision_mcnemar_p_holm": 1.0,
+      "condition": "nominal",
+      "episode_safety_violation_mcnemar_p": 1.1368683772161603e-13,
+      "episode_safety_violation_mcnemar_p_holm": 1.5916157281026244e-12,
+      "id": "nominal:brake:adaptive_conformal",
+      "inference": {
+        "effective_pairs": 100,
+        "eligible": true,
+        "reasons": []
+      },
+      "method": "adaptive_conformal",
+      "pairs": 100,
+      "scenario": "brake",
+      "violation": {
+        "ci95_high": 0.037960499999999994,
+        "ci95_low": 0.022760000000000002,
+        "mean_difference": 0.030260000000000002
+      }
+    },
+    {
+      "collision_mcnemar_p": 0.125,
+      "collision_mcnemar_p_holm": 1.0,
+      "condition": "nominal",
+      "episode_safety_violation_mcnemar_p": 1.0,
+      "episode_safety_violation_mcnemar_p_holm": 1.0,
+      "id": "nominal:cutin:static_conformal",
+      "inference": {
+        "effective_pairs": 100,
+        "eligible": true,
+        "reasons": []
+      },
+      "method": "static_conformal",
+      "pairs": 100,
+      "scenario": "cutin",
+      "violation": {
+        "ci95_high": 0.066071493637941,
+        "ci95_low": 0.055487530075187974,
+        "mean_difference": 0.060388895315211105
+      }
+    },
+    {
+      "collision_mcnemar_p": 0.125,
+      "collision_mcnemar_p_holm": 1.0,
+      "condition": "nominal",
+      "episode_safety_violation_mcnemar_p": 1.0,
+      "episode_safety_violation_mcnemar_p_holm": 1.0,
+      "id": "nominal:cutin:adaptive_conformal",
+      "inference": {
+        "effective_pairs": 100,
+        "eligible": true,
+        "reasons": []
+      },
+      "method": "adaptive_conformal",
+      "pairs": 100,
+      "scenario": "cutin",
+      "violation": {
+        "ci95_high": 0.066071493637941,
+        "ci95_low": 0.055487530075187974,
+        "mean_difference": 0.060388895315211105
+      }
+    },
+    {
+      "collision_mcnemar_p": 1.0,
+      "collision_mcnemar_p_holm": 1.0,
+      "condition": "slope_shift",
+      "episode_safety_violation_mcnemar_p": 1.0,
+      "episode_safety_violation_mcnemar_p_holm": 1.0,
+      "id": "slope_shift:brake:static_conformal",
+      "inference": {
+        "effective_pairs": 100,
+        "eligible": true,
+        "reasons": []
+      },
+      "method": "static_conformal",
+      "pairs": 100,
+      "scenario": "brake",
+      "violation": {
+        "ci95_high": 0.0,
+        "ci95_low": 0.0,
+        "mean_difference": 0.0
+      }
+    },
+    {
+      "collision_mcnemar_p": 1.0,
+      "collision_mcnemar_p_holm": 1.0,
+      "condition": "slope_shift",
+      "episode_safety_violation_mcnemar_p": 1.0,
+      "episode_safety_violation_mcnemar_p_holm": 1.0,
+      "id": "slope_shift:brake:adaptive_conformal",
+      "inference": {
+        "effective_pairs": 100,
+        "eligible": true,
+        "reasons": []
+      },
+      "method": "adaptive_conformal",
+      "pairs": 100,
+      "scenario": "brake",
+      "violation": {
+        "ci95_high": 0.0,
+        "ci95_low": 0.0,
+        "mean_difference": 0.0
+      }
+    },
+    {
+      "collision_mcnemar_p": 1.0,
+      "collision_mcnemar_p_holm": 1.0,
+      "condition": "slope_shift",
+      "episode_safety_violation_mcnemar_p": 1.0,
+      "episode_safety_violation_mcnemar_p_holm": 1.0,
+      "id": "slope_shift:cutin:static_conformal",
+      "inference": {
+        "effective_pairs": 100,
+        "eligible": true,
+        "reasons": []
+      },
+      "method": "static_conformal",
+      "pairs": 100,
+      "scenario": "cutin",
+      "violation": {
+        "ci95_high": 0.013760000000000001,
+        "ci95_low": 0.013060000000000002,
+        "mean_difference": 0.013400000000000002
+      }
+    },
+    {
+      "collision_mcnemar_p": 1.0,
+      "collision_mcnemar_p_holm": 1.0,
+      "condition": "slope_shift",
+      "episode_safety_violation_mcnemar_p": 1.0,
+      "episode_safety_violation_mcnemar_p_holm": 1.0,
+      "id": "slope_shift:cutin:adaptive_conformal",
+      "inference": {
+        "effective_pairs": 100,
+        "eligible": true,
+        "reasons": []
+      },
+      "method": "adaptive_conformal",
+      "pairs": 100,
+      "scenario": "cutin",
+      "violation": {
+        "ci95_high": 0.013760000000000001,
+        "ci95_low": 0.013060000000000002,
+        "mean_difference": 0.013400000000000002
+      }
+    }
+  ],
+  "warning": "Paired inference requires seeded randomized resets and distinct paired initial states; other outputs are descriptive only."
+}

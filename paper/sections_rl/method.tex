@@ -1,0 +1,82 @@
+\section{RACF Method}
+\subsection{Calibration and robust action correction}
+For an independently collected transition $Z=(s,a,s^+)$, define the fixed
+nominal-model score $S(Z)=\|s^+-f_0(s,a)\|_2$. Given $n$ calibration
+scores, let
+\begin{equation}
+ k=\lceil(n+1)(1-\alpha)\rceil,\qquad q_\alpha=S_{(k)},
+ \label{eq:quantile}
+\end{equation}
+where $S_{(k)}$ is the order statistic and $q_\alpha=+\infty$ if $k>n$.
+Conformal risk control offers a broader loss construction
+\cite{angelopoulos2024crc}; a residual norm makes our
+margin-to-control conversion explicit.
+
+At each step, RACF constructs the feasible set
+\begin{equation}
+ \mathcal F_t(m_t)=\{a\in\mathcal A:
+       h(f_\theta(s_t,a))\geq m_t,\;\theta\in\Theta_t\}
+ \label{eq:feasible}
+\end{equation}
+and computes
+\begin{equation}
+ a_t=\arg\min_{a\in\mathcal F_t(m_t)}\|a-a_t^\pi\|_2^2.
+ \label{eq:projection}
+\end{equation}
+The candidate set is a local protocol object, generated before evaluation;
+runtime control reads no external dataset or service. In the main study,
+$\Theta=\{1500,1800\}\!\times\!\{0,3\}\!\times\!\{0.7,1.0\}$
+contains eight mass (kg), grade (degrees), and actuator-gain hypotheses.
+The combined 1800 kg/$2^\circ$ condition is an interpolation stress cell,
+not an exact member of this grid.
+Static RACF sets $\Theta_t=\Theta$ and $m_t=\eta q_\alpha$.
+The coefficient $\eta$ specifies the operating margin; the analytical
+residual-to-safety conversion uses $\eta\geq L_h$.
+When the feasible set is empty or the solver fails its feasibility check,
+the controller applies bounded maximum braking and records a fallback.
+This makes feasibility, intervention, and realized safety independently
+observable.
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[>=Stealth, font=\fontsize{9}{10}\selectfont,
+ node distance=5mm, box/.style={draw,align=center,inner sep=4pt,minimum height=9mm}]
+ \node[box] (policy) {Frozen policy\\$a_t^\pi=\pi(o_t)$};
+ \node[box,right=6mm of policy] (filter) {Robust projection\\$\Theta_t,\,m_t$};
+ \node[box,right=6mm of filter] (plant) {ACC\\plant};
+ \draw[->] (policy) -- (filter);
+ \draw[->] (filter) -- node[above] {$a_t$} (plant);
+ \node[box,below=7mm of filter] (cal) {Residual calibration\\and candidate update};
+ \draw[->] (cal) -- (filter);
+ \draw[->] (plant.south) |- (cal.east);
+ \node[right=1mm of plant.south,anchor=north west] {$s_{t+1}$};
+\end{tikzpicture}
+\caption{RACF combines a frozen policy with calibrated action correction.
+The transition observed after execution updates the next control step.}
+\label{fig:method}
+\end{figure}
+
+\subsection{Adaptive selection and horizon-aware envelopes}
+The adaptive variant ranks each candidate by the residual quantile in a
+40-transition window, evaluated every ten steps after twenty observations.
+It retains at most four candidates with the smallest residual scores.
+Observed grade further restricts candidates within $0.75^\circ$ of a grid
+value; intermediate grades retain the available grid. A residual trigger
+reopens the full candidate set for a bounded recovery period. The threshold
+uses a separate 100-transition window with its calibration value as a floor.
+All updates consume the transition just completed, so the action at time
+$t$ uses information available before its execution (Fig.~\ref{fig:method}).
+This empirical adaptation complements the explicit online coverage objectives
+studied in adaptive conformal inference \cite{gibbs2021adaptive}.
+
+A horizon-aware alternative calibrates the maximum score of a complete
+episode $\tau$:
+\begin{equation}
+ M_H(\tau)=\max_{0\leq t<H} S(Z_t).
+ \label{eq:maxscore}
+\end{equation}
+Applying~\eqref{eq:quantile} to independent episode maxima yields an
+envelope $q_H$. The evaluated fixed-envelope variant instead transfers the
+previously selected threshold $B=0.45$ to the 12-policy study. This tests the
+effect of an episode-oriented operating margin across policies; the formal
+max-score result below describes calibration on complete episodes.

@@ -1,0 +1,41 @@
+\section{Problem Formulation}
+Consider a finite-horizon controlled process with observation $o_t$ and
+frozen policy $a_t^\pi=\pi(o_t)$. We seek an applied action $a_t$ in a bounded set
+$\mathcal A$ that preserves a safety margin $h(s_{t+1})\geq0$ and stays
+close to $a_t^\pi$. The policy is trained before calibration and evaluation.
+The deployment filter changes its actions without updating policy weights.
+
+The ACC state is $s=(v_e,v_l,g,v_d,\phi)$, comprising ego speed, lead
+speed, inter-vehicle gap, desired speed, and grade. We linearly normalize a
+protocol-defined actuator interval $[F_{\min},F_{\max}]=[-6000,4000]$ N:
+$F(a)=F_{\min}+(a+1)(F_{\max}-F_{\min})/2=-1000+5000a$ N for
+$a\in[-1,1]$. Under a gain shift $\gamma$, the simulator applies
+$F_\gamma(a)=-1000+5000\gamma a$ N. These bounds specify the experiment;
+the linear normalization is the policy--actuator interface. With sampling interval
+$\Delta t=0.1$ s, longitudinal prediction uses drag, rolling resistance,
+grade, and a mass-dependent acceleration \cite{rajamani2012vehicle}.
+The nominal model $f_0$ approximates these effects and predicts constant lead
+speed. Model hypotheses $f_\theta$ vary mass, grade, and actuator gain over
+a finite set $\Theta$.
+
+We use the constant-time-headway (CTH) spacing policy
+$d_{\mathrm{CTH}}=d_0+T_hv_e$, a standard ACC design
+\cite{wu2020spacing,molnar2023cruise}. Our protocol fixes
+$d_0=3$ m, $T_h=1.5$ s, and $v_{\max}=30$ m/s, giving
+\begin{equation}
+ h_{\mathrm{CTH}}(s)=\min\{g-d_0-T_hv_e,\;v_{\max}-v_e\}.
+ \label{eq:margin}
+\end{equation}
+The margin changes with $g$ and $v_e$, while its three protocol coefficients
+remain fixed. Closing-speed and braking-distance alternatives such as
+time-to-conflict and responsibility-sensitive safety (RSS) represent a richer
+dynamic risk model \cite{molnar2023cruise,shalevshwartz2017rss}.
+For the Euclidean norm in these physical coordinates,
+$h_{\mathrm{CTH}}$ is Lipschitz with
+$L_h=\sqrt{1+T_h^2}=\sqrt{3.25}$.
+Calibration and evaluation use the same physical coordinates; changing their
+scaling requires recalibrating the score and its Lipschitz conversion.
+
+The episode endpoint monitors the same time-headway flag $g<3+1.5v_e$;
+collision, violation duration, tracking error, and comfort provide
+complementary outcomes.

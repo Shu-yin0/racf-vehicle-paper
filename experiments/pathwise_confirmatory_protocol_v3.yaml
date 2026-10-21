@@ -1,0 +1,56 @@
+protocol: racf_pathwise_confirmatory_v3
+status: frozen_design_before_collection
+scope: ACC partial rollout; never full benchmark
+purpose: decouple pathwise margin selection from certificate calibration and confirmatory safety
+horizon: 500
+split_unit: complete_episode
+splits:
+  development:
+    seed_range: [1230000, 1230079]
+    action_rule: candidate_fixed_envelope
+    conditions: [nominal, mass_shift]
+    scenarios: [brake, stopgo]
+    schedules: [stationary, abrupt_grade, gradual_gain_loss, repeated_switch]
+    candidate_B: [0.15, 0.25, 0.35, 0.45, 0.55]
+    candidate_L: [1.0, 1.803, 2.5]
+    episodes_per_configuration: 20
+    selection_rule:
+      order: [feasibility, early_termination, primary_violation_noninferiority, projection_gap]
+      raw_pressure_gate: {minimum_episode_violation_rate: 0.01}
+      minimum_pathwise_coverage: 0.9
+      primary_noninferiority_margin: 0.01
+      projection_target_source: temporal_v3_development_only
+      tie_break: smallest_B_then_smallest_L
+  certificate:
+    seed_range: [1240000, 1242499]
+    action_rule: selected_development_configuration_frozen
+    calibration_episodes_per_policy: 100
+    test_episodes_per_policy: 500
+    exact_confidence: 0.95
+    score: max_over_horizon_l2_residual
+    calibration_test_disjoint: true
+  confirmatory:
+    seed_range: [1250000, 1250399]
+    action_rule: selected_development_configuration_frozen
+    conditions: [nominal, mass_shift]
+    scenarios: [brake, stopgo]
+    schedules: [stationary, abrupt_grade, gradual_gain_loss, repeated_switch]
+    episodes_per_cell: 100
+    pairing: same_policy_reset_seed_schedule_horizon
+policies:
+  family: mixed_iql
+  seeds: [0, 1, 2, 3]
+primary_endpoint: episode_any_controllable_safety_violation
+secondary_endpoints: [certificate_coverage, post_shift_violation_burden, projection_rate, fallback_rate, runtime_ms_p50, runtime_ms_p95, runtime_ms_p99, deadline_miss_rate]
+statistics:
+  binary: exact_paired_mcnemar
+  continuous: paired_episode_bootstrap_ci
+  multiplicity: Holm over frozen method-policy-condition-schedule family
+boundaries:
+  development_selection_is_not_confirmatory: true
+  certificate_action_rule_fixed_before_certificate: true
+  certificate_is_not_trajectory_safety: true
+  early_termination_is_recorded_not_dropped: true
+  arbitrary_policy: false
+  continuous_parameter: false
+  full_benchmark: false

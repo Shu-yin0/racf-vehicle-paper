@@ -1,0 +1,330 @@
+{
+  "action_bin_edges": [
+    -1.0,
+    -0.3333333333333333,
+    0.3333333333333333,
+    1.0
+  ],
+  "alpha": 0.1,
+  "calibration_conditions": [
+    "combined",
+    "mass_shift",
+    "nominal",
+    "slope_shift"
+  ],
+  "calibration_source": "icassp2027/data/iid_v4_shards",
+  "condition_quantiles": {
+    "combined": 0.07467722495536876,
+    "mass_shift": 0.0740495376120502,
+    "nominal": 0.09078879007355795,
+    "slope_shift": 0.08913731719061499
+  },
+  "conditions": {
+    "combined": {
+      "condition_quantile": 0.07467722495536876,
+      "coverage": 1.0,
+      "n_test": 500,
+      "quantile": 0.09078879007355795,
+      "test_file": "combined/test_combined_seed0.npz"
+    },
+    "mass_shift": {
+      "condition_quantile": 0.0740495376120502,
+      "coverage": 1.0,
+      "n_test": 500,
+      "quantile": 0.09078879007355795,
+      "test_file": "mass_shift/test_mass_shift_seed0.npz"
+    },
+    "nominal": {
+      "condition_quantile": 0.09078879007355795,
+      "coverage": 0.896,
+      "n_test": 500,
+      "quantile": 0.09078879007355795,
+      "test_file": "nominal/test_nominal_seed0.npz"
+    },
+    "slope_shift": {
+      "condition_quantile": 0.08913731719061499,
+      "coverage": 0.894,
+      "n_test": 500,
+      "quantile": 0.09078879007355795,
+      "test_file": "slope_shift/test_slope_shift_seed0.npz"
+    }
+  },
+  "diagnostic": "conditional_score_coverage",
+  "dynamics_model": "reduced_physics_actuator_gain_v1",
+  "global_quantile": 0.09078879007355795,
+  "interpretation": "Descriptive iid one-step strata; conditional deployment coverage is not proved, and no TV bound or trajectory-safety guarantee is inferred.",
+  "state_bin_edges": [
+    -Infinity,
+    8.881414413452148,
+    10.655580520629883,
+    Infinity
+  ],
+  "status": "partial rollout",
+  "strata": [
+    {
+      "bin": "low",
+      "ci95_high": 1.0,
+      "ci95_low": 0.9792585822661561,
+      "condition": "combined",
+      "coverage": 1.0,
+      "n_covered": 176,
+      "n_test": 176,
+      "quantile": 0.09078879007355795,
+      "variable": "ego_speed"
+    },
+    {
+      "bin": "mid",
+      "ci95_high": 1.0,
+      "ci95_low": 0.9780229280715039,
+      "condition": "combined",
+      "coverage": 1.0,
+      "n_covered": 166,
+      "n_test": 166,
+      "quantile": 0.09078879007355795,
+      "variable": "ego_speed"
+    },
+    {
+      "bin": "high",
+      "ci95_high": 1.0,
+      "ci95_low": 0.9769231020102804,
+      "condition": "combined",
+      "coverage": 1.0,
+      "n_covered": 158,
+      "n_test": 158,
+      "quantile": 0.09078879007355795,
+      "variable": "ego_speed"
+    },
+    {
+      "bin": "low",
+      "ci95_high": 1.0,
+      "ci95_low": 0.9791413046509426,
+      "condition": "combined",
+      "coverage": 1.0,
+      "n_covered": 175,
+      "n_test": 175,
+      "quantile": 0.09078879007355795,
+      "variable": "action"
+    },
+    {
+      "bin": "mid",
+      "ci95_high": 1.0,
+      "ci95_low": 0.9752178295104192,
+      "condition": "combined",
+      "coverage": 1.0,
+      "n_covered": 147,
+      "n_test": 147,
+      "quantile": 0.09078879007355795,
+      "variable": "action"
+    },
+    {
+      "bin": "high",
+      "ci95_high": 1.0,
+      "ci95_low": 0.9794892252854894,
+      "condition": "combined",
+      "coverage": 1.0,
+      "n_covered": 178,
+      "n_test": 178,
+      "quantile": 0.09078879007355795,
+      "variable": "action"
+    },
+    {
+      "bin": "low",
+      "ci95_high": 1.0,
+      "ci95_low": 0.9570350803704349,
+      "condition": "mass_shift",
+      "coverage": 1.0,
+      "n_covered": 84,
+      "n_test": 84,
+      "quantile": 0.09078879007355795,
+      "variable": "ego_speed"
+    },
+    {
+      "bin": "mid",
+      "ci95_high": 1.0,
+      "ci95_low": 0.9800439991586838,
+      "condition": "mass_shift",
+      "coverage": 1.0,
+      "n_covered": 183,
+      "n_test": 183,
+      "quantile": 0.09078879007355795,
+      "variable": "ego_speed"
+    },
+    {
+      "bin": "high",
+      "ci95_high": 1.0,
+      "ci95_low": 0.9842925682535313,
+      "condition": "mass_shift",
+      "coverage": 1.0,
+      "n_covered": 233,
+      "n_test": 233,
+      "quantile": 0.09078879007355795,
+      "variable": "ego_speed"
+    },
+    {
+      "bin": "low",
+      "ci95_high": 1.0,
+      "ci95_low": 0.9791413046509426,
+      "condition": "mass_shift",
+      "coverage": 1.0,
+      "n_covered": 175,
+      "n_test": 175,
+      "quantile": 0.09078879007355795,
+      "variable": "action"
+    },
+    {
+      "bin": "mid",
+      "ci95_high": 1.0,
+      "ci95_low": 0.9752178295104192,
+      "condition": "mass_shift",
+      "coverage": 1.0,
+      "n_covered": 147,
+      "n_test": 147,
+      "quantile": 0.09078879007355795,
+      "variable": "action"
+    },
+    {
+      "bin": "high",
+      "ci95_high": 1.0,
+      "ci95_low": 0.9794892252854894,
+      "condition": "mass_shift",
+      "coverage": 1.0,
+      "n_covered": 178,
+      "n_test": 178,
+      "quantile": 0.09078879007355795,
+      "variable": "action"
+    },
+    {
+      "bin": "low",
+      "ci95_high": 0.9818905878470316,
+      "ci95_low": 0.8968481098405651,
+      "condition": "nominal",
+      "coverage": 0.9512195121951219,
+      "n_covered": 117,
+      "n_test": 123,
+      "quantile": 0.09078879007355795,
+      "variable": "ego_speed"
+    },
+    {
+      "bin": "mid",
+      "ci95_high": 0.9364106304525299,
+      "ci95_low": 0.8387461700081827,
+      "condition": "nominal",
+      "coverage": 0.8947368421052632,
+      "n_covered": 153,
+      "n_test": 171,
+      "quantile": 0.09078879007355795,
+      "variable": "ego_speed"
+    },
+    {
+      "bin": "high",
+      "ci95_high": 0.9077433792497998,
+      "ci95_low": 0.8095784315472971,
+      "condition": "nominal",
+      "coverage": 0.8640776699029126,
+      "n_covered": 178,
+      "n_test": 206,
+      "quantile": 0.09078879007355795,
+      "variable": "ego_speed"
+    },
+    {
+      "bin": "low",
+      "ci95_high": 0.8565623237572593,
+      "ci95_low": 0.7329867720660632,
+      "condition": "nominal",
+      "coverage": 0.8,
+      "n_covered": 140,
+      "n_test": 175,
+      "quantile": 0.09078879007355795,
+      "variable": "action"
+    },
+    {
+      "bin": "mid",
+      "ci95_high": 1.0,
+      "ci95_low": 0.9752178295104192,
+      "condition": "nominal",
+      "coverage": 1.0,
+      "n_covered": 147,
+      "n_test": 147,
+      "quantile": 0.09078879007355795,
+      "variable": "action"
+    },
+    {
+      "bin": "high",
+      "ci95_high": 0.94337517060951,
+      "ci95_low": 0.8514918739418434,
+      "condition": "nominal",
+      "coverage": 0.9044943820224719,
+      "n_covered": 161,
+      "n_test": 178,
+      "quantile": 0.09078879007355795,
+      "variable": "action"
+    },
+    {
+      "bin": "low",
+      "ci95_high": 0.966305724532382,
+      "ci95_low": 0.9037240869636095,
+      "condition": "slope_shift",
+      "coverage": 0.9404761904761905,
+      "n_covered": 237,
+      "n_test": 252,
+      "quantile": 0.09078879007355795,
+      "variable": "ego_speed"
+    },
+    {
+      "bin": "mid",
+      "ci95_high": 0.9059351692747787,
+      "ci95_low": 0.7728526040044926,
+      "condition": "slope_shift",
+      "coverage": 0.848,
+      "n_covered": 106,
+      "n_test": 125,
+      "quantile": 0.09078879007355795,
+      "variable": "ego_speed"
+    },
+    {
+      "bin": "high",
+      "ci95_high": 0.9043607724765873,
+      "ci95_low": 0.769329783197644,
+      "condition": "slope_shift",
+      "coverage": 0.8455284552845529,
+      "n_covered": 104,
+      "n_test": 123,
+      "quantile": 0.09078879007355795,
+      "variable": "ego_speed"
+    },
+    {
+      "bin": "low",
+      "ci95_high": 0.8565623237572593,
+      "ci95_low": 0.7329867720660632,
+      "condition": "slope_shift",
+      "coverage": 0.8,
+      "n_covered": 140,
+      "n_test": 175,
+      "quantile": 0.09078879007355795,
+      "variable": "action"
+    },
+    {
+      "bin": "mid",
+      "ci95_high": 1.0,
+      "ci95_low": 0.9752178295104192,
+      "condition": "slope_shift",
+      "coverage": 1.0,
+      "n_covered": 147,
+      "n_test": 147,
+      "quantile": 0.09078879007355795,
+      "variable": "action"
+    },
+    {
+      "bin": "high",
+      "ci95_high": 0.9389586809395121,
+      "ci95_low": 0.844893618232364,
+      "condition": "slope_shift",
+      "coverage": 0.898876404494382,
+      "n_covered": 160,
+      "n_test": 178,
+      "quantile": 0.09078879007355795,
+      "variable": "action"
+    }
+  ],
+  "target_coverage": 0.9
+}

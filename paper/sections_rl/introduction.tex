@@ -1,0 +1,54 @@
+\section{Introduction}
+Offline reinforcement learning (RL) offers a practical route to vehicle
+control from previously collected driving data \cite{levine2020offline}.
+Algorithms such as implicit Q-learning (IQL) and conservative Q-learning
+(CQL) address action-distribution mismatch during policy training
+\cite{kostrikov2022iql,kumar2020cql}. Recent cross-domain offline RL also
+trains policies for test-time dynamics perturbations \cite{qiao2026droco}.
+Deployment nevertheless introduces a second source of mismatch: a frozen
+policy encounters vehicle mass, road grade, and actuation
+characteristics that differ from those represented by its training data.
+In adaptive cruise control (ACC), these changes affect braking response and
+the distance required to maintain a prescribed time headway. A useful
+deployment mechanism must therefore correct unsafe commands while retaining
+the policy's tracking behavior.
+
+Safe RL methods address this problem through constrained learning or runtime
+intervention \cite{brunke2022safe}.
+Shielding and safety layers act directly on proposed commands
+\cite{alshiekh2018shielding,dalal2018safe}; control barrier functions and
+predictive safety filters connect these corrections to model-based
+constraints \cite{ames2017cbf,wabersich2021psf}.
+Learning-based model predictive control (MPC) captures the interaction
+between estimation error and constrained decision making
+\cite{aswani2013lbmpc}. For a frozen RL policy, the central
+design question is how a data-calibrated model-error margin should influence
+the amount of action intervention.
+
+Conformal prediction provides finite-sample prediction regions from held-out
+residuals \cite{vovk2005algorithmic,angelopoulos2023gentle}. Work on
+covariate shift, non-exchangeability, and robust validation characterizes
+how those regions change under distribution mismatch
+\cite{tibshirani2019covariate,barber2023beyond,cauchois2024robust}.
+Conformal planning and adaptive conformal control embed uncertainty regions
+in dynamic constraints \cite{lindemann2023safeplanning,zhou2024safetycritical}.
+Robust conformal runtime verification explicitly models design-to-deployment
+trajectory shift \cite{zhao2024robuststl}.
+Recent work also couples conformal temporal-logic monitoring with RL
+shielding \cite{beirami2026} and uses generative priors to recalibrate
+planning under changing environments \cite{rahaman2026shift}.
+We study this residual-to-action interface across frozen policy families
+and explicit physical perturbations.
+
+We develop residual-aware conformal action filtering (RACF) as a post-policy
+deployment layer for this setting.
+RACF combines a fixed prediction model, a calibrated residual threshold, and
+robust projection over a finite set of dynamics hypotheses. Its adaptive
+variant uses observed residuals to select relevant hypotheses; a fixed
+episode-envelope variant changes the margin at which the policy is filtered.
+The specific contribution is their common, auditable interface for frozen
+offline policies. We provide a
+score-shift coverage analysis with a finite-horizon extension, and a paired
+evaluation of 12 policies under four ACC operating conditions. The resulting
+evidence quantifies both constraint improvement and intervention cost, and
+identifies where policy behavior and model uncertainty interact.

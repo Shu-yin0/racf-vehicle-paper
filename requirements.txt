@@ -1,0 +1,8 @@
+numpy>=1.24,<2.1
+scipy>=1.10,<2
+matplotlib>=3.7,<4
+gymnasium>=0.29,<2
+torch>=2.1,<2.7
+d3rlpy==2.8.1
+stable-baselines3>=2.3,<3
+osqp>=1.0,<2

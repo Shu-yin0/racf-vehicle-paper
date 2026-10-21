@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the accompanying paper."
+title: "Residual-Aware Conformal Action Filtering for Offline Reinforcement Learning in Adaptive Cruise Control"
+type: software
+version: "0.1.0"
+date-released: 2026-10-21
+authors:
+  - family-names: Li
+    given-names: Zelin
+    affiliation: ""
+repository-code: "https://github.com/Shu-yin0/racf-vehicle-paper"
+license: "NOASSERTION"
+keywords:
+  - conformal prediction
+  - offline reinforcement learning
+  - safety filtering
+  - adaptive cruise control
+  - distribution shift
